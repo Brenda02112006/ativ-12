@@ -26,12 +26,10 @@ function pesquisar(value){
 function vizualizar(pagina, novo = false, id = null) {
     document.body.setAttribute('page', pagina);
     if (pagina === 'cadastro') {
-        if (novo) {
-            limparEdicao();
-            document.getElementById('id').value = '';
-        }
+    
         if (id) {
-            const usuario = listaRegistros.usuarios.find(usuario => usuario.id == id);            if (usuario) {
+            const usuario = listaRegistros.usuarios.find(usuario => usuario.id == id);            
+            if (usuario) {
                 document.getElementById('id').value = usuario.id;
                 document.getElementById('nome').value = usuario.nome;
                 document.getElementById('cpf').value = usuario.cpf;
@@ -150,6 +148,20 @@ function editUsuario(id, nome, cpf, dataNascimento, estadoCivil, rendaMensal, lo
     gravarBD();
 }
 
+function deletarUsuario(id) {
+    const index = listaRegistros.usuarios.findIndex(usuario => usuario.id === id);
+    if (index !== -1) {
+        listaRegistros.usuarios.splice(index, 1);
+        gravarBD();
+        desenhar();
+    }
+}
+
+function perguntarSeDeleta(id) {
+    if (confirm("Tem certeza que deseja deletar este usuário?")) {
+        deletarUsuario(id);
+    }
+}
 
 window.addEventListener('load', () => {
     lerBD()
