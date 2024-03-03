@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuários</title>
     <script type='text/javascript' src="main.js"></script>
+    
 
     <style>
         #listaRegistros{ display: none; }
@@ -114,16 +115,16 @@
         <div class='label'>
             <div>Nome</div>
             <div>
-                <input id='nome' required minlength="3" />
-                <div class="invalid-feedback">Nome deve ter no mínimo 3 caracteres</div>
+                <input id='nome' placeholder="Nome"required minlength="3" />
+                <div class="invalid-feedback"></div>
             </div>
         </div>
     
         <div class='label'>
             <div>CPF</div>
             <div>
-                <input id='cpf' type="text" pattern="\d{11}" maxlength="11" required />
-                <div class="invalid-feedback">CPF deve ter 11 dígitos numéricos</div>
+                <input id='cpf' type="text" pattern="\d{11}" maxlength="11" placeholder="cpf"required />
+                <div class="invalid-feedback"></div>
             </div>
         </div>
     
@@ -131,7 +132,7 @@
             <div>Data de Nascimento</div>
             <div>
                 <input id='dataNascimento' type="date" max="2024-03-02" required />
-                <div class="invalid-feedback">Data de nascimento deve ser anterior à data atual</div>
+                <div class="invalid-feedback"></div>
             </div>
         </div>
     
@@ -140,37 +141,37 @@
             <div>
                 <select id='estadoCivil' required>
                     <option value="">Selecione</option>
-                    <option value="solteiro">Solteiro(a)</option>
-                    <option value="casado">Casado(a)</option>
-                    <option value="separado">Separado(a)</option>
-                    <option value="divorciado">Divorciado(a)</option>
-                    <option value="viuvo">Viúvo(a)</option>
+                    <option value="Solteiro(a)">Solteiro(a)</option>
+                    <option value="Casado(a)">Casado(a)</option>
+                    <option value="Separado(a)">Separado(a)</option>
+                    <option value="Divorciado(a)">Divorciado(a)</option>
+                    <option value="Viúvo(a)">Viúvo(a)</option>
                 </select>
-                <div class="invalid-feedback">Por favor, selecione uma opção de estado civil</div>
+                <div class="invalid-feedback"></div>
             </div>
         </div>
     
         <div class='label'>
             <div>Renda Mensal</div>
             <div>
-                <input id='rendaMensal' type="number" step="0.01" required />
-                <div class="invalid-feedback">Renda mensal deve ser um valor numérico</div>
+                <input id='rendaMensal' type="number" step="0.01" placeholder="0.00"required />
+                <div class="invalid-feedback"></div>
             </div>
         </div>
     
         <div class='label'>
             <div>Logradouro</div>
             <div>
-                <input id='logradouro' minlength="3" required />
-                <div class="invalid-feedback">Logradouro deve ter no mínimo 3 caracteres</div>
+                <input id='logradouro' minlength="3" placeholder="Av. Paulista"required />
+                <div class="invalid-feedback"></div>
             </div>
         </div>
     
         <div class='label'>
             <div>Número</div>
             <div>
-                <input id='numero' type="number" required />
-                <div class="invalid-feedback">Número deve ser um valor numérico</div>
+                <input id='numero' type="number" placeholder="Nº" required />
+                <div class="invalid-feedback"></div>
             </div>
         </div>
     
@@ -184,7 +185,7 @@
         <div class='label'>
             <div>Estado</div>
             <div>
-                <select id='estado' required>
+                <select id='estado' placeholder="AL" required>
                     <option value="">Selecione</option>
                     <option value="AC">Acre</option>
                     <option value="AL">Alagoas</option>
@@ -214,7 +215,7 @@
                     <option value="SE">Sergipe</option>
                     <option value="TO">Tocantins</option>
                 </select>
-                <div class="invalid-feedback">Por favor, selecione um estado</div>
+                <div class="invalid-feedback"></div>
                 
             </div>
         </div>
@@ -222,17 +223,22 @@
         <div class='label'>
             <div>Cidade</div>
             <div>
-                <input id='cidade' minlength="3" required />
-                <div class="invalid-feedback">Cidade deve ter no mínimo 3 caracteres</div>
+                <input id='cidade' minlength="3" placeholder="Maceió" required />
+                <div class="invalid-feedback"></div>
             </div>
         </div>
     
         <div>
             <button>Salvar</button>
             <button onclick="vizualizar('lista')" class="cinza" type='button'>Cancelar</button>
+
         </div>
+
+    
     
     </form>
+
+   
     
     
 </body>
